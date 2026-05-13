@@ -1,0 +1,23 @@
+{
+    "name": "levinelighto/php-tester",
+    "description": "A small PHP CLI App to test syntax",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Levinelighto\\PhpTester\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "src/Helpers/helpers.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "LevineLighto",
+            "email": "hello@irimold.web.id"
+        }
+    ],
+    "require": {}
+}
