@@ -4,6 +4,7 @@ namespace Levinelighto\PhpTester\Console;
 
 use InvalidArgumentException;
 use Levinelighto\PhpTester\Helpers\ClassFinder;
+use Levinelighto\PhpTester\Log\Log;
 
 class Console
 {
@@ -31,6 +32,7 @@ class Console
             return $entity;
         } catch (\Throwable $th) {
             consoleError($th);
+            Log::error($th);
         }
     }
 
@@ -77,6 +79,7 @@ class Console
             $message = $th->getMessage();
 
             consoleError($message);
+            Log::error($th);
         }
     }
 
