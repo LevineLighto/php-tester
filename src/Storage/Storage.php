@@ -4,6 +4,15 @@ namespace Levinelighto\PhpTester\Storage;
 
 class Storage
 {
+    public static function read(string $path)
+    {
+        if (!static::exists($path)) {
+            return null;
+        }
+
+        return file_get_contents(static::path($path));
+    }
+
     public static function create(string $path, mixed $data)
     {
         if (!static::directoryExists(dirname($path))) {
