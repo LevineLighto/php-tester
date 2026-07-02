@@ -47,13 +47,15 @@ class Parser
                 [$name, $value] = static::parseOption($token, $options);
                 $parsedOptions[$name] = $value;
             } else {
-                [$name, $value] = static::parseArgument($token, $arguments, count($parsedArguments) - 1);
+                [$name, $value] = static::parseArgument($token, $arguments, max(count($parsedArguments) - 1, 0));
                 $parsedArguments[$name] = $value;
             }
         }
 
         $output['arguments'] = $parsedArguments;
         $output['options']  = $parsedOptions;
+
+        return $output;
     }
 
 
