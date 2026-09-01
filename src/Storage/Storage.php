@@ -70,6 +70,6 @@ class Storage
 
     public static function path(string $path)
     {
-        return base_path("storage/app/{$path}");
+        return base_path("storage/{$path}");
     }
 }
